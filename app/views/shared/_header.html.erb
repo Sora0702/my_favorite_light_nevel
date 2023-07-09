@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to "Novel Share", :home_top, class: "navbar-brand" %>
+    <% if user_signed_in? %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to "プロフィール", :profile, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログアウト", :destroy_user_session, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "アカウント削除", :user_registration, method: :delete, data: {confirm: "アカウント削除しますか？"}, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    <% else %>
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item Nav-item"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></li>
+        <li class="nav-item Nav-item"><%= link_to "ログイン", :new_user_session %></li>
+        <li class="nav-item"><%= link_to "新規登録", :new_user_registration %></li>
+      </ul>
+    <% end %>
+  </div>
+</nav>
+

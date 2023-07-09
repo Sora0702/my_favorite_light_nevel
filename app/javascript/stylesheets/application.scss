@@ -1,0 +1,108 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+// 共通
+
+* {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+// header
+
+.Nav-item {
+  margin-right: 10px;
+}
+
+// top画面
+
+.Firstview {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://fromtheasia.com/wp-content/uploads/NCG299-scaled.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 750px;
+  padding-top: 100px;
+  margin-bottom: 100px;
+}
+
+// footer
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+// 新規ユーザー登録
+
+.Requiredform::after {
+  content: "*";
+  color: red;
+}
+
+// ログイン画面
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.alert {
+  color: red;
+}
+
+// プロフィール画面
+
+.Profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Profile-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+// エラーメッセージ
+
+.Error-message {
+  color:red;
+}
