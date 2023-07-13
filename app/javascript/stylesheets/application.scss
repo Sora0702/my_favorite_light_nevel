@@ -106,3 +106,41 @@ body {
 .Error-message {
   color:red;
 }
+
+// novel index
+
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+// review #show
+
+h3 {
+  background: linear-gradient(transparent 70%, #a7d6ff 70%);
+}
+
+.link-attention {
+  color: gray;
+  font-size: 12px;
+}

@@ -1,0 +1,3 @@
+$("#reviews-area").html("<%= j(render 'index', { reviews: @reviews }) %>")
+$("#error_explanation").html("<%= j(render 'error', { review: @review }) %>")
+$("textarea").val('')

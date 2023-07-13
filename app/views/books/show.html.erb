@@ -1,0 +1,27 @@
+<% provide :title, @book.title %>
+<div class="container">
+  <h3 class="mt-4 book-title"><%= @book.title %></h3>
+  <div class="row mt-4">
+    <div class="col-3">
+      <div class="card mb-4 shadow-sm mt-3 book-box">
+        <%= image_tag @book.image_url, class: "card-img-top", alt: "小説イメージ" %>
+        <div class="card-body">
+          <p class="card-text text-center"><%= @book.author %></p>
+          <p class="card-text text-center mt-4"><%= link_to "小説の購入はこちら", @book.url %></p>
+          <p class="card-text link-attention text-center">※楽天Booksストアへ遷移します。</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <% if user_signed_in? %>
+        <%= render "reviews/form", review: @review, post: @book %>
+      <% end %>
+      <div id="error_explanation">
+        <%= render "reviews/error", review: @review %>
+      </div>
+      <div id="reviews-area">
+        <%= render "reviews/index", reviews: @reviews, atr: :content %>
+      </div>
+    </div>
+  </div>
+</div>
