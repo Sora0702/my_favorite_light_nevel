@@ -1,15 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe 'Books', type: :request do
-  let!(:book) { create(:book) }
+RSpec.describe 'Narous', type: :request do
+  let!(:narou) { create(:narou) }
 
   describe 'GET /index' do
-    let!(:other_book) { create(:book, title: "二番目の", isbn: 1) }
-    let(:book_search_params) { { keyword: "二番目の" } }
+    let!(:other_narou) { create(:narou, title: "二番目の", ncode: "2") }
+    let(:narou_search_params) { { keyword: "二番目の" } }
 
     context '検索した場合' do
       before do
-        get books_path, params: book_search_params
+        get narous_path, params: narou_search_params
       end
 
       it '一覧画面に正常にアクセスできること' do
@@ -17,17 +17,17 @@ RSpec.describe 'Books', type: :request do
       end
 
       it 'keywordを含む小説の情報が正しく取得できること' do
-        expect(response.body).to include(other_book.title)
+        expect(response.body).to include(other_narou.title)
       end
 
       it 'keywordを含まない小説が取得されないこと' do
-        expect(response.body).not_to include(book.title)
+        expect(response.body).not_to include(narou.title)
       end
     end
 
     context '検索しない場合' do
       before do
-        get books_path
+        get narous_path
       end
 
       it '一覧画面に正常にアクセスできること' do
@@ -35,18 +35,20 @@ RSpec.describe 'Books', type: :request do
       end
 
       it '登録済みの小説の情報が全て正しく取得できること' do
-        expect(response.body).to include(other_book.title)
-        expect(response.body).to include(book.title)
+        expect(response.body).to include(other_narou.title)
+        expect(response.body).to include(other_narou.writer)
+        expect(response.body).to include(narou.title)
+        expect(response.body).to include(narou.writer)
       end
     end
   end
 
   describe 'GET /search' do
-    let(:book_search_params) { { keyword: "教室" } }
+    let(:narou_search_params) { { keyword: "教室" } }
 
     context "検索に成功した場合" do
       before do
-        get books_search_path, params: book_search_params
+        get narous_search_path, params: narou_search_params
       end
 
       it "リクエストに成功すること" do
@@ -60,41 +62,41 @@ RSpec.describe 'Books', type: :request do
 
     context "検索に失敗した場合" do
       it "パラメータが空文字列の時, フラッシュメッセージが表示されること" do
-        get books_search_path, params: { keyword: "" }
+        get narous_search_path, params: { keyword: "" }
         expect(response).to have_http_status(200)
         expect(response.body).to include("小説のタイトルを入力してください。")
       end
 
       it "パラメータがnilの時, フラッシュメッセージが表示されること" do
-        get books_search_path, params: { keyword: nil }
+        get narous_search_path, params: { keyword: nil }
         expect(response).to have_http_status(200)
         expect(response.body).to include("小説のタイトルを入力してください。")
       end
     end
   end
 
-  describe 'POST books' do
-    let(:books_params) { { book: { title: "test", author: "author", isbn: 12345, url: "test", image_url: "test" } } }
-    let(:bad_books_params) { { book: { title: "test", author: "author", isbn: 1234, url: "test", image_url: "test" } } }
+  describe 'POST narous' do
+    let(:narous_params) { { narou: { title: "test", writer: "author", isbn: "12345" } } }
+    let(:bad_narous_params) { { narou: { title: "test2", writer: "author", ncode: "n2854hc" } } }
 
     it 'リクエストが成功したらshowアクションにリダイレクトすること' do
-      post books_create_path, params: books_params
-      expect(response).to redirect_to book_path(Book.second.id)
+      post narous_create_path, params: narous_params
+      expect(response).to redirect_to narou_path(Narou.second.id)
     end
 
     it 'リクエストが成功したら登録小説が１件保存されていること' do
-      expect { post books_create_path, params: books_params }.to change(Book, :count).by(1)
+      expect { post narous_create_path, params: narous_params }.to change(Narou, :count).by(1)
     end
 
-    it 'isbnが重複する場合はフラッシュメッセージが表示されること' do
-      post books_create_path, params: bad_books_params
-      expect(response.body).to include("すでに登録されている小説です。")
+    it 'ncodeが重複する場合はフラッシュメッセージが表示されること' do
+      post narous_create_path, params: bad_narous_params
+      expect(response.body).to include("すでに登録されているweb小説です。")
     end
   end
 
   describe 'GET /show' do
     before do
-      get book_path(book)
+      get narou_path(narou)
     end
 
     it "リクエストに成功すること" do
@@ -102,10 +104,10 @@ RSpec.describe 'Books', type: :request do
     end
 
     it '小説の情報が正しく取得できること' do
-      expect(response.body).to include(book.title)
-      expect(response.body).to include(book.author)
-      expect(response.body).to include(book.url)
-      expect(response.body).to include(book.image_url)
+      expect(response.body).to include(narou.title)
+      expect(response.body).to include(narou.writer)
+      expect(response.body).to include(narou.story)
+      expect(response.body).to include(narou.ncode)
     end
   end
 end

@@ -1,0 +1,32 @@
+<p>web小説を登録し、感想を共有しよう！</p>
+<div class="table-responsive">
+  <table class='table table-hover table-inverse result-box'>
+    <thead>
+      <tr>
+        <th class="text-center">タイトル</th>
+        <th class="text-center">著者</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% i = 1 %>
+      <% while i <= @narous[0]["allcount"] && i <=10 %>
+        <tr>
+          <td class="align-middle text-center"><%= @narous[i]["title"] %></td>
+          <td class="align-middle text-center"><%= @narous[i]["writer"] %></td>
+          <td class="align-middle">
+            <%= form_with model: @narou, url: narous_create_path, local: true do |f| %>
+              <%= f.hidden_field :title, value: @narous[i]["title"] %>
+              <%= f.hidden_field :writer, value: @narous[i]["writer"] %>
+              <%= f.hidden_field :ncode, value: @narous[i]["ncode"] %>
+              <%= f.hidden_field :story, value: @narous[i]["story"] %>
+              <%= f.hidden_field :biggenre, value: @narous[i]["biggenre"] %>
+              <%= f.submit "web小説を登録する", class: "form-control" %>
+            <% end %>
+          </td>
+        </tr>
+        <% i += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

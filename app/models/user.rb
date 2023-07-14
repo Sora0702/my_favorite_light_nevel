@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 300 }
   has_many :novels
   has_many :reviews
+  has_many :narou_review
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

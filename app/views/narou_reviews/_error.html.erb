@@ -1,0 +1,9 @@
+<% if narou_review.errors.any? %>
+  <div class="error_message text-center">
+    <ul>
+      <% narou_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -11,16 +11,19 @@
             <%= link_to "Home", :root, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "プロフィール", :profile, class: "nav-link" %>
+            <%= link_to "web小説を検索する", :narous_search, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "小説を共有する", :new_novel, class: "nav-link" %>
+            <%= link_to "登録済みのweb小説一覧", :narous, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%=  link_to "小説を検索する", :books_search, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "登録済みの小説一覧", :books, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "プロフィール", :profile, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "ログアウト", :destroy_user_session, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "nav-link" %>
