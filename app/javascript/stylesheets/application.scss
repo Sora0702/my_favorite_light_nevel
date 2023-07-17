@@ -29,12 +29,14 @@ p {
 // top画面
 
 .Firstview {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://fromtheasia.com/wp-content/uploads/NCG299-scaled.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 750px;
-  padding-top: 100px;
-  margin-bottom: 100px;
+  background-color: #a7d6ff;
+}
+
+.top-search-menu {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: solid;
+  font-size: large;
 }
 
 // footer

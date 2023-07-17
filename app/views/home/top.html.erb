@@ -1,7 +1,37 @@
 <div class="Firstview">
-  <section class="container">
-    <h2 class="Firstview-title">お気に入りの小説を記録し、共有しよう。</h2>
-    <%= link_to "web小説を検索する", :narous_search, class: "nav-link text-nowrap" %>
-    <%= link_to "小説を検索する", :books_search, class: "nav-link text-nowrap" %>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="mx-auto">
+        <h1 class="fw-light">小説を記録して、</br>
+          感想を共有しよう！
+        </h1>
+        <p class="py-md-2">Okinoveはお気に入りの小説やweb小説を記録し、感想を共有するサービスです。</p>
+        <p>まずは気になる小説を検索してみよう！</p>
+      </div>
+    </div>
+    <div class="top-search-menu py-lg-5">
+      <div>
+        <p class="mb-2">キーワードで小説を検索する</p>
+        <%= form_with url: books_search_path, method: :get do |f| %>
+          <div class="input-group mb-4">
+            <%= f.text_field :keyword, class: "form-control", placeholder: "タイトル、著者" %>
+            <span class="input-group-btn">
+              <%= f.submit "検索", class: "form-control" %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <p class="mb-2">キーワードでweb小説を検索する</p>
+        <%= form_with url: narous_search_path, method: :get do |f| %>
+          <div class="input-group mb-4">
+            <%= f.text_field :keyword, class: "form-control", placeholder: "タイトル、作者" %>
+            <span class="input-group-btn">
+              <%= f.submit "検索", class: "form-control" %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </section>
 </div>
