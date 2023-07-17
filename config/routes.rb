@@ -24,9 +24,11 @@ Rails.application.routes.draw do
 
   resources :books, only: [:show, :index] do
     resources :reviews, only: [:create, :destroy]
+    resources :likes, only: [:create, :destroy], shallow: true
   end
 
   resources :narous, only: [:show, :index] do
     resources :narou_reviews, only: [:create, :destroy]
+    resources :narou_likes, only: [:create, :destroy], shallow: true
   end
 end

@@ -138,6 +138,53 @@ RSpec.describe "books", type: :system do
         end
       end
     end
+
+    describe 'お気に入り登録について' do
+      context 'ログインしている場合' do
+        before do
+          login(user)
+          visit book_path(book)
+        end
+
+        it 'お気に入り機能が表示されること' do
+          expect(page).to have_selector ".like-box"
+        end
+
+        context 'お気に入り登録している場合' do
+          before do
+            find("#like-btn").click
+          end
+
+          it 'お気に入り解除項目が表示されていること' do
+            expect(page).to have_content "お気に入り登録を解除する"
+          end
+
+          it 'お気に入り解除ができること' do
+            find("#like-btn").click
+            sleep 0.5
+            expect(user.likes.count).to eq(0)
+          end
+        end
+
+        context 'お気に入り登録していない場合' do
+          it 'お気に入り登録項目が表示されていること' do
+            expect(page).to have_content "お気に入り登録する"
+          end
+
+          it 'お気に入り登録ができること' do
+            find("#like-btn").click
+            sleep 0.5
+            expect(user.likes.count).to eq(1)
+          end
+        end
+      end
+
+      context 'ログインしていない場合' do
+        it 'お気に入り機能が表示されないこと' do
+          expect(page).not_to have_selector ".like-box"
+        end
+      end
+    end
   end
 
   describe '小説検索画面' do

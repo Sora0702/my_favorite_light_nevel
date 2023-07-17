@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    @books = current_user.like_books
   end
 
   def edit
