@@ -206,6 +206,37 @@ text: other_user_narou_review.created_at.strftime("%Y/%m/%d")
           expect(page).to have_content "教室"
         end
       end
+
+      describe '小説の登録' do
+        context '未登録小説の場合' do
+          it '検索結果から小説を登録するボタンを押下した際に登録ができること' do
+            expect { click_on "web小説を登録する", match: :first }.to change(Narou, :count).by(1)
+          end
+  
+          it '登録成功後に小説の詳細ページに遷移すること' do
+            click_on "web小説を登録する", match: :first
+            expect(page).to have_current_path narou_path(Narou.third.id)
+          end
+        end
+  
+        context 'web登録済み小説の場合' do
+          before do
+            click_on "web小説を登録する", match: :first
+            visit narous_search_path
+            fill_in 'keyword', with: "教室"
+            click_on '検索'
+          end
+  
+          it '検索結果から小説を登録するボタンを押下した際に登録されないこと' do
+            expect { click_on "web小説を登録する", match: :first }.to change(Narou, :count).by(0)
+          end
+  
+          it '小説の詳細ページに遷移すること' do
+            click_on "web小説を登録する", match: :first
+            expect(page).to have_current_path narou_path(Narou.third.id)
+          end
+        end
+      end
     end
 
     context '検索しない場合、小説が見つからない場合' do

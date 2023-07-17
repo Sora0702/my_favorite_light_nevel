@@ -13,7 +13,7 @@
       <% books.each do |book| %>
         <tr>
           <td class="align-middle text-center"><%= book.title %></td>
-          <td class="align-middle text-center"><%= book.author %></td>
+          <td class="align-middle"><%= book.author %></td>
           <td class="align-middle"><%= link_to (image_tag(book.medium_image_url)), book.item_url %></td>
           <td class="align-middle">
             <%= form_with model: @book, url: books_create_path, local: true do |f| %>

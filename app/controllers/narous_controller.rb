@@ -16,14 +16,15 @@ class NarousController < ApplicationController
   end
 
   def create
+    narou_ncode = narou_params[:ncode]
     @narous = Narou.all
     @narou = Narou.new(narou_params)
     if @narou.save
       flash[:notice] = "web小説を登録しました。"
       redirect_to @narou
     else
-      flash.now[:alert] = "すでに登録されているweb小説です。"
-      render :index
+      @narou = Narou.find_by(ncode: narou_ncode)
+      redirect_to @narou
     end
   end
 
