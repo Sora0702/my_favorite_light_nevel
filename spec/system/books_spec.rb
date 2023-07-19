@@ -14,7 +14,7 @@ RSpec.describe "books", type: :system do
     end
 
     it 'ページのタイトルが正しく表示されていること' do
-      expect(page).to have_title "登録済み小説一覧 - Novel Share"
+      expect(page).to have_title "登録済み小説一覧 - Okinove"
     end
 
     context '検索した場合' do
@@ -53,7 +53,7 @@ RSpec.describe "books", type: :system do
     end
 
     it 'ページのタイトルが正しく表示されていること' do
-      expect(page).to have_title "#{book.title} - Novel Share"
+      expect(page).to have_title "#{book.title} - Okinove"
     end
 
     it '小説名が表示されていること' do
@@ -193,7 +193,7 @@ RSpec.describe "books", type: :system do
     end
 
     it 'ページのタイトルが正しく表示されていること' do
-      expect(page).to have_title "小説を検索する - Novel Share"
+      expect(page).to have_title "小説を検索する - Okinove"
     end
 
     context '検索した場合' do

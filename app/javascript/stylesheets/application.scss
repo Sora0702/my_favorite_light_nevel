@@ -26,6 +26,10 @@ p {
   margin-right: 10px;
 }
 
+.header-hover:hover {
+  border-bottom: solid #a7d6ff;
+}
+
 // top画面
 
 .Firstview {
@@ -37,6 +41,17 @@ p {
   justify-content: space-evenly;
   border-top: solid;
   font-size: large;
+}
+
+.review-tab {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.review-tab:hover {
+  border-bottom: solid #a7d6ff;
+  border-bottom-width: 0.5rem;
 }
 
 // footer

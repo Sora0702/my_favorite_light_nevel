@@ -10,28 +10,33 @@
       </div>
     </div>
     <div class="top-search-menu py-lg-5">
-      <div>
+      <div class="book_search-area">
         <p class="mb-2">キーワードで小説を検索する</p>
-        <%= form_with url: books_search_path, method: :get do |f| %>
-          <div class="input-group mb-4">
-            <%= f.text_field :keyword, class: "form-control", placeholder: "タイトル、著者" %>
-            <span class="input-group-btn">
-              <%= f.submit "検索", class: "form-control" %>
-            </span>
-          </div>
-        <% end %>
+        <%= render "shared/books_search" %>
       </div>
-      <div>
+      <div class="narou-search-area">
         <p class="mb-2">キーワードでweb小説を検索する</p>
-        <%= form_with url: narous_search_path, method: :get do |f| %>
-          <div class="input-group mb-4">
-            <%= f.text_field :keyword, class: "form-control", placeholder: "タイトル、作者" %>
-            <span class="input-group-btn">
-              <%= f.submit "検索", class: "form-control" %>
-            </span>
-          </div>
-        <% end %>
+        <%= render "shared/narous_search" %>
       </div>
     </div>
   </section>
+</div>
+<ul class="py-5 nav nav-pills nav-fill">
+  <li class="nav-item">
+    <%= link_to "一般小説の最新レビュー", reviews_latest_path, remote: true, class: "review-tab" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "web小説の最新レビュー", narou_reviews_latest_path, remote: true, class: "review-tab"  %>
+  </li>
+</ul>
+<div>
+  <% if @reviews.present? %>
+    <div class="latest-review-area">
+      <%= render "reviews/latest", reviews: @reviews %>
+    </div>
+  <% elsif @narou_reviews.present? %>
+    <div class="latest-review-area">
+      <%= render "narou_reviews/latest", narou_reviews: @narou_reviews %>
+    </div>
+  <% end %>
 </div>

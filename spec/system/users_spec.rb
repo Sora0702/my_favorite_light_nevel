@@ -13,7 +13,7 @@ RSpec.describe "users", type: :system do
     end
 
     it 'プロフィール詳細ページのタイトルが正しく表示されていること' do
-      expect(page).to have_title "プロフィール詳細 - Novel Share"
+      expect(page).to have_title "プロフィール詳細 - Okinove"
     end
 
     it 'ユーザー情報が表示されていること' do
@@ -66,7 +66,7 @@ RSpec.describe "users", type: :system do
     end
 
     it 'プロフィール編集ページのタイトルが正しく表示されていること' do
-      expect(page).to have_title "プロフィール編集 - Novel Share"
+      expect(page).to have_title "プロフィール編集 - Okinove"
     end
 
     describe 'プロフィール編集機能' do
