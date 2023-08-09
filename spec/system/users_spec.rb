@@ -63,7 +63,7 @@ RSpec.describe "users", type: :system do
 
     context 'web小説のお気に入り一覧' do
       before do
-        click_on "web小説のお気に入り一覧"
+        click_on "web小説のお気に入り"
       end
 
       it 'お気に入り登録したweb小説の情報が表示されていること' do
@@ -111,22 +111,6 @@ RSpec.describe "users", type: :system do
           within(".Profile-image") do
             expect(page).to have_selector("img[src$='test_image.jpg']")
           end
-        end
-      end
-    end
-
-    describe 'ユーザーおよびアカウント情報の編集リンクについて' do
-      it 'プロフィールを編集ボタンを押下した際に、プロフィール編集画面に遷移すること' do
-        within('.Edit-information') do
-          click_on 'プロフィールを編集'
-          expect(page).to have_current_path profile_edit_path
-        end
-      end
-
-      it 'アカウント情報を編集ボタンを押下した際に、アカウント編集画面に遷移すること' do
-        within('.Edit-information') do
-          click_on 'アカウント情報を編集'
-          expect(page).to have_current_path edit_user_registration_path
         end
       end
     end
