@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'users/profile', to: 'users#profile', as: 'profile'
   get 'users/profile/edit', to: 'users#edit', as: 'profile_edit'
   put 'users/profile', to: 'users#update' 
+  get 'users/like', to: 'users#like', as: 'user_like'
+  get 'users/narou_like', to: 'users#narou_like', as: 'user_narou_like'
   root to: 'home#top'
   get 'home/top'
   get 'book/search', to: 'books#search', as: 'books_search'

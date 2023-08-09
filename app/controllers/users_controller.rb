@@ -22,6 +22,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def like
+    @books = current_user.like_books
+  end
+
+  def narou_like
+    @narous = current_user.narou_like_narous
+  end
+
   private
 
   def user_params

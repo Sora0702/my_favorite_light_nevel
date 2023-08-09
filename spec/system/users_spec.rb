@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "users", type: :system do
   let!(:user) { create(:user) }
+  let!(:book) { create(:book) }
+  let!(:other_book) { create(:book, title: "二番目の", isbn: 1, author: "other_author", image_url: "https://1.bp.blogspot.com/-rzRcgoXDqEg/YAOTCKoCpPI/AAAAAAABdOI/5Bl3_zhOxm07TUGzW8_83cXMOT9yy1VJwCNcBGAsYHQ/s1041/onepiece02_zoro_bandana.png") }
+  let!(:like) { create(:like, user_id: 1, book_id: 1) }
+  let!(:narou) { create(:narou) }
+  let!(:other_narou) { create(:narou, title: "二番目の", ncode: "2", writer: "other_author") }
+  let!(:narou_like) { create(:narou_like, user_id: 1, narou_id: 1) }
 
   before do
     login(user)
@@ -20,6 +26,72 @@ RSpec.describe "users", type: :system do
       within(".profile-box") do
         expect(page).to have_content user.name
         expect(page).to have_content user.introduction
+      end
+    end
+
+    context '一般小説のお気に入り一覧' do
+      it 'お気に入り登録した小説の情報が表示されていること' do
+        within(".book-box") do
+          expect(page).to have_content book.title
+          expect(page).to have_content book.author
+          expect(page).to have_selector("img[src$='#{book.image_url}']")
+          expect(page).to have_content "お気に入り登録を解除する"
+        end
+      end
+
+      it 'お気に入り登録していない小説が表示されていないこと' do
+        within(".book-box") do
+          expect(page).not_to have_content other_book.title
+          expect(page).not_to have_content other_book.author
+          expect(page).not_to have_selector("img[src$='#{other_book.image_url}']")
+        end
+      end
+
+      it 'レビューするボタンを押下した際に、小説の詳細ページに遷移すること' do
+        within(".book-box") do
+          find(".link-to-review").click
+          expect(page).to have_current_path book_path(book)
+        end
+      end
+
+      it 'お気に入り解除ができること' do
+        find("#like-btn").click
+        sleep 0.5
+        expect(user.likes.count).to eq(0)
+      end
+    end
+
+    context 'web小説のお気に入り一覧' do
+      before do
+        click_on "web小説のお気に入り一覧"
+      end
+
+      it 'お気に入り登録したweb小説の情報が表示されていること' do
+        within(".narou-box") do
+          expect(page).to have_content narou.title
+          expect(page).to have_content narou.writer
+          expect(page).to have_content "お気に入り登録を解除する"
+        end
+      end
+
+      it 'お気に入り登録していないweb小説が表示されていないこと' do
+        within(".narou-box") do
+          expect(page).not_to have_content other_narou.title
+          expect(page).not_to have_content other_narou.writer
+        end
+      end
+
+      it 'レビューするボタンを押下した際に、web小説の詳細ページに遷移すること' do
+        within(".narou-box") do
+          find(".link-to-review").click
+          expect(page).to have_current_path narou_path(narou)
+        end
+      end
+
+      it 'お気に入り解除ができること' do
+        find("#like-btn").click
+        sleep 0.5
+        expect(user.narou_likes.count).to eq(0)
       end
     end
 
