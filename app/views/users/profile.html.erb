@@ -6,13 +6,27 @@
       <%= render "shared/image", image_size: "75x75", user: current_user %>
       <p class="Profile-name text-center mt-1"><%= current_user.name %></p>
     </div>
-    <div class="Edit-information">
-      <%= link_to "アカウント情報を編集", :edit_user_registration, class: "btn btn-outline-dark" %>
-      <%= link_to "プロフィールを編集", :profile_edit, class: "btn btn-outline-dark"%>
-    </div>
   </div>
-  <div class="Profile-information">
+  <div class="Profile-information mt-2">
     <p class="Profile-introduction"><%= current_user.introduction %></p>
   </div>
 </div>
-<%= render "shared/books_index", books: @books %>
+<ul class="py-5 nav nav-pills nav-fill">
+  <li class="nav-item">
+    <%= link_to "一般小説のお気に入り", user_like_path, remote: true, class: "review-tab" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "web小説のお気に入り", user_narou_like_path, remote: true, class: "review-tab"  %>
+  </li>
+</ul>
+<div>
+  <% if @books.present? %>
+    <div class="like-area">
+      <%= render "shared/books_index", books: @books %>
+    </div>
+  <% elsif @narous.present? %>
+    <div class="like-area">
+      <%= render "shared/narous_index", narous: @narous %>
+    </div>
+  <% end %>
+</div>

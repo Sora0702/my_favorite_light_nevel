@@ -5,6 +5,8 @@
   </a>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
     <li><%= link_to "プロフィール", :profile, class: "dropdown-item" %></li>
+    <li><%= link_to "アカウント情報を編集", :edit_user_registration, class: "dropdown-item" %></li>
+    <li><%= link_to "プロフィールを編集", :profile_edit, class: "dropdown-item" %></li>
     <li><%= link_to "ログアウト", :destroy_user_session, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "dropdown-item" %></li>
     <li><%= link_to "アカウント削除", :user_registration, method: :delete, data: {confirm: "アカウント削除しますか？"}, class: "dropdown-item" %></li>
   </ul>
