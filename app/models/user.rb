@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_one_attached :image
   validates :name, presence: true
   validates :introduction, length: { maximum: 300 }
+  has_many :novels
+  has_many :reviews
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|

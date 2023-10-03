@@ -40,7 +40,6 @@ RSpec.describe "devise registrations", type: :system do
       end
 
       it 'エラーメッセージが表示されること' do
-        expect(page).to have_selector '.Error-message'
         expect(page).to have_content "名前を入力してください"
         expect(page).to have_content "メールアドレスを入力してください"
         expect(page).to have_content "パスワードを入力してください"
@@ -89,8 +88,9 @@ RSpec.describe "devise registrations", type: :system do
         end
 
         it 'エラーメッセージが表示されること' do
-          expect(page).to have_selector('.Error-message')
-          expect(page).to have_content "メールアドレスを入力してください"
+          within(".Error-message") do
+            expect(page).to have_content "メールアドレスを入力してください"
+          end
         end
       end
 
@@ -103,8 +103,9 @@ RSpec.describe "devise registrations", type: :system do
         end
 
         it 'エラーメッセージが表示されること' do
-          expect(page).to have_selector('.Error-message')
-          expect(page).to have_content "確認用パスワードとパスワードの入力が一致しません"
+          within(".Error-message") do
+            expect(page).to have_content "確認用パスワードとパスワードの入力が一致しません"
+          end
         end
       end
 
@@ -118,8 +119,9 @@ RSpec.describe "devise registrations", type: :system do
         end
 
         it 'エラーメッセージが表示されること' do
-          expect(page).to have_selector('.Error-message')
-          expect(page).to have_content "現在のパスワードは不正な値です"
+          within(".Error-message") do
+            expect(page).to have_content "現在のパスワードは不正な値です"
+          end
         end
       end
     end

@@ -1,0 +1,5 @@
+<% if user.image.attached? %>
+  <%= image_tag user.image, size: image_size, style: "border-radius: 50%", alt: "ユーザーアイコン" %>
+<% else %>
+  <%= image_tag "https://fromtheasia.com/wp-content/uploads/NCG260-2000x1200.jpg", size: image_size, style: "border-radius: 50%", alt: "デフォルトアイコン" %>
+<% end %>

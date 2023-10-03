@@ -17,24 +17,28 @@ RSpec.describe "users", type: :system do
     end
 
     it 'ユーザー情報が表示されていること' do
-      expect(page).to have_content user.name
-      expect(page).to have_content user.introduction
+      within(".profile-box") do
+        expect(page).to have_content user.name
+        expect(page).to have_content user.introduction
+      end
     end
 
     describe 'ユーザーアイコン' do
       context 'ユーザーアイコンが登録されていない場合' do
         it 'デフォルトアイコンが表示されること' do
-          expect(page).to have_selector("img[src$='NCG260-2000x1200.jpg']")
+          within(".Profile-image") do
+            expect(page).to have_selector("img[src$='NCG260-2000x1200.jpg']")
+          end
         end
       end
 
       context 'ユーザーアイコンが登録されている場合' do
         it '登録したアイコンが表示されること' do
-          visit profile_edit_path
-          attach_file "#{Rails.root}/spec/fixtures/files/test_image.jpg"
-          click_on '更新する'
+          user_image
           visit profile_path
-          expect(page).to have_selector("img[src$='test_image.jpg']")
+          within(".Profile-image") do
+            expect(page).to have_selector("img[src$='test_image.jpg']")
+          end
         end
       end
     end
@@ -81,9 +85,11 @@ RSpec.describe "users", type: :system do
         end
 
         it '編集後の情報が表示されること' do
-          expect(page).to have_content "testuser"
-          expect(page).to have_content "test"
-          expect(page).to have_selector("img[src$='test_image.jpg']")
+          within(".profile-box") do
+            expect(page).to have_content "testuser"
+            expect(page).to have_content "test"
+            expect(page).to have_selector("img[src$='test_image.jpg']")
+          end
         end
       end
 

@@ -60,7 +60,7 @@ RSpec.describe "devise sessions", type: :system do
           fill_in 'パスワード', with: ""
           click_button 'ログイン'
         end
-        
+
         it 'エラーメッセージが表示されること' do
           within('.alert') do
             expect(page).to have_content "メールアドレスまたはパスワードが無効です。"
@@ -74,7 +74,7 @@ RSpec.describe "devise sessions", type: :system do
           fill_in 'パスワード', with: other_user.password
           click_button 'ログイン'
         end
-        
+
         it 'エラーメッセージが表示されること' do
           within('.alert') do
             expect(page).to have_content "メールアドレスかパスワードが違います。"

@@ -1,0 +1,32 @@
+<p>小説を登録し、感想を共有しよう！</p>
+<table class='table table-hover table-inverse result-box'>
+  <thead>
+    <tr>
+      <th class="text-center">タイトル</th>
+      <th class="text-center">著者</th>
+      <th class="text-center">概要</th>
+      <th></th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% books.each do |book| %>
+      <tr>
+        <td class="align-middle"><%= book.title %></td>
+        <td class="align-middle"><%= book.author %></td>
+        <td class="align-middle"><%= book.item_caption %></td>
+        <td class="align-middle"><%= link_to (image_tag(book.medium_image_url)), book.item_url %></td>
+        <td class="align-middle">
+          <%= form_with model: @book, url: books_create_path, local: true do |f| %>
+            <%= f.hidden_field :title, value: book.title %>
+            <%= f.hidden_field :author, value: book.author %>
+            <%= f.hidden_field :isbn, value: book.isbn %>
+            <%= f.hidden_field :url, value: book.item_url %>
+            <%= f.hidden_field :image_url, value: book.large_image_url %>
+            <%= f.submit "小説を登録する", class: "form-control" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

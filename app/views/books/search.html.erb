@@ -1,0 +1,16 @@
+<% provide :title, "小説を検索する" %>
+<div class="container">
+  <div class="search-box mt-4">
+    <%= form_with url: books_search_path, method: :get do |f| %>
+      <div class="input-group mb-4">
+        <%= f.text_field :keyword, class: "form-control" %>
+        <span class="input-group-btn">
+          <%= f.submit "検索", class: "form-control" %>
+        </span>
+      </div>
+    <% end %>
+    <% if @books.present? %>
+      <%= render "books/result", books: @books %>
+    <% end %>
+  </div>
+</div>

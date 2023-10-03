@@ -1,5 +1,7 @@
 <div class="container flash-message">
   <% if flash[:notice] %>
     <p class="text-center"><%= flash[:notice] %></p>
+  <% elsif flash[:alert] %>
+    <p class="text-center mt-4"><%= flash[:alert] %></p>
   <% end %>
 </div>

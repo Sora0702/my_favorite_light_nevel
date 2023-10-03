@@ -1,15 +1,10 @@
 <% provide :title, "プロフィール詳細" %>
-<div class="container">
+<div class="container profile-box">
   <h3 class= "mt-4">プロフィール</h3>
   <div class="Profile-header mt-4">
     <div class="Profile-image">
-      <% if current_user.image.attached? %>
-        <%= image_tag current_user.image, size: "75x75", style: "border-radius: 50%", alt: "ユーザーアイコン" %>
-      <% else %>
-        <%= image_tag "https://fromtheasia.com/wp-content/uploads/NCG260-2000x1200.jpg", size: "75x75", style: "border-radius: 50%", alt: "デフォルトアイコン" %>
-      <% end %>
+      <%= render "shared/image", image_size: "75x75", user: current_user %>
       <p class="Profile-name text-center mt-1"><%= current_user.name %></p>
-      <p class="text-center mt-1"><%= current_user.email %></p>
     </div>
     <div class="Edit-information">
       <%= link_to "アカウント情報を編集", :edit_user_registration, class: "btn btn-outline-dark" %>
@@ -18,6 +13,5 @@
   </div>
   <div class="Profile-information">
     <p class="Profile-introduction"><%= current_user.introduction %></p>
-  </div>
   </div>
 </div>
