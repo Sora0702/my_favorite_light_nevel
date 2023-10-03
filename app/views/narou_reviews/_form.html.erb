@@ -1,0 +1,12 @@
+<div class="mb-4 review-form">
+  <%= form_for [@narou, @narou_review], remote: true do |f| %>
+    <div class="mt-2">
+      <%= f.label "レビューを投稿する" %>
+      <%= f.text_area :content, class: "form-control js-comment-form", id: "review-content" %>
+    </div>
+    <%= f.hidden_field :narou_id, value: @narou.id %>
+    <div class="mt-2">
+      <%= f.submit "投稿する", class: "form-control" %>
+    </div>
+  <% end %>
+</div>

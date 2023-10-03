@@ -144,3 +144,10 @@ h3 {
   color: gray;
   font-size: 12px;
 }
+
+.txt-limit {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5; /* 任意の行数を指定 */
+}

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Reviews", type: :request do
   let!(:user) { create(:user) }
-  let!(:book) { create(:book)}
+  let!(:book) { create(:book) }
   let!(:review) { create(:review, user_id: user.id, book_id: book.id) }
   let(:review_params) { { review: { content: "test" } } }
 

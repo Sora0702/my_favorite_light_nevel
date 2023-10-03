@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_10_194802) do
+ActiveRecord::Schema.define(version: 2023_07_14_225206) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,22 +43,32 @@ ActiveRecord::Schema.define(version: 2023_07_10_194802) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
-    t.integer "isbn"
+    t.bigint "isbn"
     t.string "url"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "review_id"
+    t.index ["isbn"], name: "index_books_on_isbn", unique: true
   end
 
-  create_table "novels", force: :cascade do |t|
-    t.string "novel_name"
-    t.string "category"
-    t.string "author"
-    t.text "impression"
+  create_table "narou_reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.integer "narou_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+  end
+
+  create_table "narous", force: :cascade do |t|
+    t.string "title"
+    t.string "writer"
+    t.integer "biggenre"
+    t.string "ncode"
+    t.text "story"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ncode"], name: "index_narous_on_ncode", unique: true
   end
 
   create_table "reviews", force: :cascade do |t|

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Review, type: :model do
   let!(:user) { create(:user) }
-  let!(:book) { create(:book)}
+  let!(:book) { create(:book) }
   let(:review) { create(:review, user_id: user.id, book_id: book.id) }
 
   describe 'review' do
@@ -16,7 +16,7 @@ RSpec.describe Review, type: :model do
       expect(review.errors[:content]).to include("を入力してください")
     end
 
-    it 'contentの文字数が300文字を超えた場合に無効となること' do
+    it 'contentの文字数が400文字を超えた場合に無効となること' do
       review = Review.new(content: "a" * 401)
       review.valid?
       expect(review.errors[:content]).to include("は400文字以内で入力してください")

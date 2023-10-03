@@ -1,0 +1,30 @@
+<% provide :title, @narou.title %>
+<div class="container">
+  <h3 class="mt-4 narou-title"><%= @narou.title %></h3>
+  <div class="row mt-4">
+    <div class="col-3">
+      <div class="card mb-4 shadow-sm mt-3 narou-box">
+        <div class="card-header">
+          <p class="card-text text-center"><%= "筆者: #{@narou.writer}" %></p>
+          <p class="card-text text-center"><%= link_to "この小説を読む", "https://ncode.syosetu.com/#{@narou.ncode}/" %></p>
+          <p class="card-text link-attention text-center">※小説家になろうの作品ページへ遷移します。</p>
+        </div>
+        <div class="card-body">
+          <p class="card-text mb-1">小説情報</p>
+          <p class="card-text"><%= @narou.story %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <% if user_signed_in? %>
+        <%= render "narou_reviews/form", narou_review: @narou_review, post: @narou %>
+      <% end %>
+      <div id="error_explanation">
+        <%= render "narou_reviews/error", narou_review: @narou_review %>
+      </div>
+      <div id="reviews-area">
+        <%= render "narou_reviews/index", narou_reviews: @narou_reviews, atr: :content %>
+      </div>
+    </div>
+  </div>
+</div>

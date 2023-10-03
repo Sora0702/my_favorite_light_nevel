@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/new'
   get 'users/profile'
   get 'users/profile', to: 'users#profile', as: 'profile'
   get 'users/profile/edit', to: 'users#edit', as: 'profile_edit'
@@ -8,6 +7,8 @@ Rails.application.routes.draw do
   get 'home/top'
   get 'book/search', to: 'books#search', as: 'books_search'
   post 'book/search', to: 'books#create', as: 'books_create'
+  get 'narou/search', to: 'narous#search', as: 'narous_search'
+  post 'narou/search', to: 'narous#create', as: 'narous_create'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'
@@ -21,8 +22,11 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
-  resources :novels
   resources :books, only: [:show, :index] do
     resources :reviews, only: [:create, :destroy]
+  end
+
+  resources :narous, only: [:show, :index] do
+    resources :narou_reviews, only: [:create, :destroy]
   end
 end
