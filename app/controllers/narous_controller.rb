@@ -5,7 +5,7 @@ class NarousController < ApplicationController
     @params = params[:keyword]
     if params[:keyword].present?
       client    = HTTPClient.new
-      url       = "https://api.syosetu.com/novelapi/api/?out=json&word=#{@params}"
+      url       = URI.encode "https://api.syosetu.com/novelapi/api/?out=json&word=#{@params}"
       response  = client.get(url)
       @narous = JSON.parse(response.body)
       @narou = Narou.new
