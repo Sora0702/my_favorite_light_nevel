@@ -86,9 +86,9 @@ RSpec.describe 'Books', type: :request do
       expect { post books_create_path, params: books_params }.to change(Book, :count).by(1)
     end
 
-    it 'isbnが重複する場合はフラッシュメッセージが表示されること' do
+    it 'isbnが重複する場合は該当のshowアクションへリダイレクトすること' do
       post books_create_path, params: bad_books_params
-      expect(response.body).to include("すでに登録されている小説です。")
+      expect(response).to redirect_to book_path(book.id)
     end
   end
 

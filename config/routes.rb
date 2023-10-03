@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post 'book/search', to: 'books#create', as: 'books_create'
   get 'narou/search', to: 'narous#search', as: 'narous_search'
   post 'narou/search', to: 'narous#create', as: 'narous_create'
+  get 'review/latest', to: 'reviews#latest', as: 'reviews_latest'
+  get 'narou_review/latest', to: 'narou_reviews#latest', as: 'narou_reviews_latest'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations'

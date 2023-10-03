@@ -10,14 +10,15 @@ class BooksController < ApplicationController
   end
 
   def create
+    book_isbn = book_params[:isbn]
     @book = Book.new(book_params)
     @books = Book.all
     if @book.save
       flash[:notice] = "小説を登録しました。"
       redirect_to @book
     else
-      flash.now[:alert] = "すでに登録されている小説です。"
-      render :index
+      @book = Book.find_by(isbn: book_isbn)
+      redirect_to @book
     end
   end
 

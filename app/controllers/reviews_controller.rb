@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :latest
 
   def create
     @book = Book.find(params[:book_id])
@@ -18,6 +18,10 @@ class ReviewsController < ApplicationController
 
     @review.destroy
     render :index
+  end
+
+  def latest
+    @reviews = Review.all.order(created_at: :desc).limit(5)
   end
 
   private

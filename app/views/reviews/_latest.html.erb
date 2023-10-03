@@ -1,0 +1,27 @@
+<div class="card latest-reviews">
+  <ul class="list-group list-group-flush">
+    <% reviews.each do |review| %>
+      <li class="list-group-item review-item">
+        <div class="row">
+          <div class="col-3 text-center">
+            <%= link_to "#{review.book.title}", book_path(review.book) %>
+          </div>
+          <div class="col-3 text-center review-user-information">
+            <%= render "shared/image", image_size: "50x50", user: review.user %>
+            <div class="review-user-name">
+              <%= review.user.name %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="review-content">
+              <%= review.content %>
+            </div>
+            <div class="review-other-informaiton">
+              <%="投稿日 : #{review.created_at.strftime("%Y/%m/%d")}" %>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

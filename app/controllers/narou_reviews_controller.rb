@@ -1,5 +1,5 @@
 class NarouReviewsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :latest
 
   def create
     @narou = Narou.find(params[:narou_id])
@@ -18,6 +18,10 @@ class NarouReviewsController < ApplicationController
 
     @narou_review.destroy
     render :index
+  end
+
+  def latest
+    @narou_reviews = NarouReview.all.order(created_at: :desc).limit(5)
   end
 
   private

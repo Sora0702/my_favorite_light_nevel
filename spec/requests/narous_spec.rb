@@ -88,9 +88,9 @@ RSpec.describe 'Narous', type: :request do
       expect { post narous_create_path, params: narous_params }.to change(Narou, :count).by(1)
     end
 
-    it 'ncodeが重複する場合はフラッシュメッセージが表示されること' do
+    it 'ncodeが重複する場合は該当のshowアクションへリダイレクトすること' do
       post narous_create_path, params: bad_narous_params
-      expect(response.body).to include("すでに登録されているweb小説です。")
+      expect(response).to redirect_to narou_path(narou.id)
     end
   end
 

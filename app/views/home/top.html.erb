@@ -1,7 +1,42 @@
 <div class="Firstview">
-  <section class="container">
-    <h2 class="Firstview-title">お気に入りの小説を記録し、共有しよう。</h2>
-    <%= link_to "web小説を検索する", :narous_search, class: "nav-link text-nowrap" %>
-    <%= link_to "小説を検索する", :books_search, class: "nav-link text-nowrap" %>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="mx-auto">
+        <h1 class="fw-light">小説を記録して、</br>
+          感想を共有しよう！
+        </h1>
+        <p class="py-md-2">Okinoveはお気に入りの小説やweb小説を記録し、感想を共有するサービスです。</p>
+        <p>まずは気になる小説を検索してみよう！</p>
+      </div>
+    </div>
+    <div class="top-search-menu py-lg-5">
+      <div class="book_search-area">
+        <p class="mb-2">キーワードで小説を検索する</p>
+        <%= render "shared/books_search" %>
+      </div>
+      <div class="narou-search-area">
+        <p class="mb-2">キーワードでweb小説を検索する</p>
+        <%= render "shared/narous_search" %>
+      </div>
+    </div>
   </section>
+</div>
+<ul class="py-5 nav nav-pills nav-fill">
+  <li class="nav-item">
+    <%= link_to "一般小説の最新レビュー", reviews_latest_path, remote: true, class: "review-tab" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "web小説の最新レビュー", narou_reviews_latest_path, remote: true, class: "review-tab"  %>
+  </li>
+</ul>
+<div>
+  <% if @reviews.present? %>
+    <div class="latest-review-area">
+      <%= render "reviews/latest", reviews: @reviews %>
+    </div>
+  <% elsif @narou_reviews.present? %>
+    <div class="latest-review-area">
+      <%= render "narou_reviews/latest", narou_reviews: @narou_reviews %>
+    </div>
+  <% end %>
 </div>

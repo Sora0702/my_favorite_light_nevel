@@ -1,0 +1,27 @@
+<div class="card latest-narou-reviews">
+  <ul class="list-group list-group-flush">
+    <% narou_reviews.each do |narou_review| %>
+      <li class="list-group-item narou-review-item">
+        <div class="row">
+          <div class="col-3 text-center">
+            <%= link_to "#{narou_review.narou.title}", narou_path(narou_review.narou) %>
+          </div>
+          <div class="col-3 text-center review-user-information">
+            <%= render "shared/image", image_size: "50x50", user: narou_review.user %>
+            <div class="review-user-name">
+              <%= narou_review.user.name %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="review-content">
+              <%= narou_review.content %>
+            </div>
+            <div class="review-other-informaiton">
+              <%="投稿日 : #{narou_review.created_at.strftime("%Y/%m/%d")}" %>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
