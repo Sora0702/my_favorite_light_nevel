@@ -3,10 +3,10 @@ class NarousController < ApplicationController
   require 'uri'
 
   def search
-    @params = params[:keyword]
+    @params = URI.encode_www_form_component(params[:keyword])
     if params[:keyword].present?
       client    = HTTPClient.new
-      url       = URI.parse URI.encode "https://api.syosetu.com/novelapi/api/?out=json&word=#{@params}"
+      url       = "https://api.syosetu.com/novelapi/api/?out=json&word=#{@params}"
       response  = client.get(url)
       @narous = JSON.parse(response.body)
       @narou = Narou.new
