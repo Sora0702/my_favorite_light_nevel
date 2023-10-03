@@ -1,37 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+  <div class="container-fluid header-box">
     <%= link_to "Novel Share", :home_top, class: "navbar-brand" %>
     <% if user_signed_in? %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <%= link_to "Home", :root, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "web小説を検索する", :narous_search, class: "nav-link" %>
+            <%= link_to "web小説一覧", :narous, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "登録済みのweb小説一覧", :narous, class: "nav-link" %>
+            <%= link_to "一般小説一覧", :books, class: "nav-link text-nowrap" %>
           </li>
           <li class="nav-item">
-            <%=  link_to "小説を検索する", :books_search, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "登録済みの小説一覧", :books, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "プロフィール", :profile, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "ログアウト", :destroy_user_session, method: :delete, data: {confirm: "ログアウトしますか？"}, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "アカウント削除", :user_registration, method: :delete, data: {confirm: "アカウント削除しますか？"}, class: "nav-link" %>
           </li>
         </ul>
+        <span class="navbar-text">
+          <%= render "shared/header_dropdown_user" %>
+        </span>
       </div>
     <% else %>
       <ul class="navbar-nav flex-row">

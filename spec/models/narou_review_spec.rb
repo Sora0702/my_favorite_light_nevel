@@ -11,7 +11,7 @@ RSpec.describe NarouReview, type: :model do
     end
 
     it 'contentが空白の場合に無効となること' do
-      narou_review = NarouReview.new(content: nil)
+      narou_review = NarouReview.new(content: "")
       narou_review.valid?
       expect(narou_review.errors[:content]).to include("を入力してください")
     end

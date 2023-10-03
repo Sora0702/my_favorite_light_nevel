@@ -1,6 +1,11 @@
 <% provide :title, @narou.title %>
 <div class="container">
   <h3 class="mt-4 narou-title"><%= @narou.title %></h3>
+  <% if user_signed_in? %>
+    <div id="btn-like-<%= @narou.id %>" class="like-box">
+      <%= render "narou_likes/like_area", narou: @narou %>
+    </div>
+  <% end %>
   <div class="row mt-4">
     <div class="col-3">
       <div class="card mb-4 shadow-sm mt-3 narou-box">

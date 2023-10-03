@@ -11,7 +11,7 @@ RSpec.describe Review, type: :model do
     end
 
     it 'contentが空白の場合に無効となること' do
-      review = Review.new(content: nil)
+      review = Review.new(content: "")
       review.valid?
       expect(review.errors[:content]).to include("を入力してください")
     end
