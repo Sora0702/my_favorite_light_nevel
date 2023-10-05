@@ -6,7 +6,7 @@
 
 * アプリケーションの確認は[こちら](https://okinove-de71f085f06e.herokuapp.com/)
 
-1.[DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
+  1. [DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
 
 # DEMO
 
