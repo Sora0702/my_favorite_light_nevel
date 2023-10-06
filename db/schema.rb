@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2023_07_15_201116) do
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
-    t.integer "isbn"
+    t.bigint "isbn"
     t.string "url"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
