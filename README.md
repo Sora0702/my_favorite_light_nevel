@@ -9,18 +9,41 @@
 ***
 
 1. [DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
-2. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
+2. [Features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#features)
+3. [Technology used]()
+4. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
+6. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
 
 # DEMO
 
 ![okinove](https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/62de158d-cd52-443b-bd90-fdb253a07e53)
 
-# Usage
+# Features
 
+# Technology used
+
+* Ruby 3.2.1
+* Ruby on Rails 6.1.7.3
+* heroku
+* AWS(IAM, S3)
+* RSpec
+* Rakuten API
+* なろう小説API
+
+# Functions
+
+* ユーザー登録、編集、削除機能
+* ログイン、ログアウト機能(devise)
+* 楽天apiとなろう小説apiを使った小説の検索機能
+* 小説の感想投稿と削除機能(Ajax)
+* 小説のお気に入り機能(Ajax)
+* お気に入りした小説の確認機能
+
+
+# Usage
 
 本アプリの使用にあたり、yarnおよびwebpackerのインストールが必要となります。
 ローカル環境での利用方法は以下となります。
-
 
 1. リポジトリをクローン
 ```
