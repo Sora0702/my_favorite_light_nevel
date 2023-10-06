@@ -16,16 +16,43 @@
 ![okinove](https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/62de158d-cd52-443b-bd90-fdb253a07e53)
 
 # Usage
-## Downloading and installing steps
+
+本アプリの使用にあたり、yarnおよびwebpackerのインストールが必要となります。
+ローカル環境での利用方法は以下となります。
 
 1. git clone
 ```
 $ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
 ```
-3. bundle install
-4. rails db:migrate
-5. rails db:seed
-6. yarn install
-7. yarn add @rails/webpacker
-8. export NODE_OPTIONS=--openssl-legacy-provider
-9. bundle exec rails webpacker:compile
+2. bundleのインストール
+```
+$ bundle install
+```
+3. データベースの設定
+```
+$ rails db:migrate
+```
+4. seedファイルの設定
+```
+$ rails db:seed
+```
+5. yarnのインストール
+```
+$ yarn install
+```
+6. webpackerインストール
+```
+$ yarn add @rails/webpacker
+```
+7. 環境変数を設定
+```
+$ export NODE_OPTIONS=--openssl-legacy-provider
+```
+8. webpackerのコンパイル
+```
+$ bundle exec rails webpacker:compile
+```
+9. サーバーの起動
+```
+$ rails s
+```
