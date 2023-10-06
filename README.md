@@ -19,8 +19,10 @@
 ## Downloading and installing steps
 
 1. git clone
+'''bash
 $ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
-2. bundle install
+'''
+3. bundle install
 4. rails db:migrate
 5. rails db:seed
 6. yarn install
