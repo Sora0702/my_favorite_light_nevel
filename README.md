@@ -14,24 +14,14 @@
 
 ![okinove](https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/62de158d-cd52-443b-bd90-fdb253a07e53)
 
-# 
+# Usage
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. git clone
+   $ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
+2. bundle install
+4. rails db:migrate
+5. rails db:seed
+6. yarn install
+7. yarn add @rails/webpacker
+8. export NODE_OPTIONS=--openssl-legacy-provider
+9. bundle exec rails webpacker:compile
