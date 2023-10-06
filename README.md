@@ -19,7 +19,7 @@
 ## Downloading and installing steps
 
 1. git clone
-'''bash
+'''
 $ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
 '''
 3. bundle install
