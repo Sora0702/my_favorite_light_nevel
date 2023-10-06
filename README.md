@@ -17,10 +17,12 @@
 
 # Usage
 
+
 本アプリの使用にあたり、yarnおよびwebpackerのインストールが必要となります。
 ローカル環境での利用方法は以下となります。
 
-1. git clone
+
+1. リポジトリをクローン
 ```
 $ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
 ```
