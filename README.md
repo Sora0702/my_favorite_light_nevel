@@ -10,7 +10,7 @@
 
 1. [DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
 2. [Features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#features)
-3. [Technology used]()
+3. [Technology used](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#technology-used)
 4. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
 6. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
 
