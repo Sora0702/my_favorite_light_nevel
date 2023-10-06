@@ -9,15 +9,17 @@
 ***
 
 1. [DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
+2. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
 
 # DEMO
 
 ![okinove](https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/62de158d-cd52-443b-bd90-fdb253a07e53)
 
 # Usage
+## Downloading and installing steps
 
 1. git clone
-   $ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
+$ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
 2. bundle install
 4. rails db:migrate
 5. rails db:seed
