@@ -12,7 +12,7 @@
 5. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
 6. [ER diagram](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#er-diagram)
 7. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
-8. [Future features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#fiture-features)
+8. [Future features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#future-features)
 9. [License](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#license)
 
 # URL
@@ -52,13 +52,6 @@ https://okinove-de71f085f06e.herokuapp.com/
 
 # ER diagram
 <img width="1348" alt="ER diagram" src="https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/d302660a-18c8-4586-a105-df5c0ed9a6f2">
-
-# Future features
-今後、下記の機能の追加を目指しています。
-
-* おすすめ小説機能（閲覧している作品をお気に入り登録しているユーザーがお気に入り登録している作品の提示）
-* 小説家になろう以外のweb小説サービスの導入
-* 他のユーザーへのお気に入り作品の公開機能と公開非公開の選択機能
 
 # Usage
 
@@ -101,6 +94,13 @@ $ bundle exec rails webpacker:compile
 ```
 $ rails s
 ```
+
+# Future features
+今後、下記の機能の追加を目指しています。
+
+* おすすめ小説機能（閲覧している作品をお気に入り登録しているユーザーがお気に入り登録している作品の提示）
+* 小説家になろう以外のweb小説サービスの導入
+* 他のユーザーへのお気に入り作品の公開機能と公開非公開の選択機能
 
 # License
 
