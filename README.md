@@ -15,7 +15,7 @@
 8. [License](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#license)
 
 # URL
-(https://okinove-de71f085f06e.herokuapp.com/)
+https://okinove-de71f085f06e.herokuapp.com/
 
 # DEMO
 
@@ -24,9 +24,9 @@
 # Features
 
 本アプリの作成の経緯について、新しい小説を探すときに商業小説とweb小説のレビューが同時に確認できるようなサービスが見当たらないためです。
-商業小説のユーザーとweb小説のユーザーが触れ合う機会を作ることでより、より読書の幅が広がると考えました。　　
+商業小説のユーザーとweb小説のユーザーが触れ合う機会を作ることでより、より読書の幅が広がると考えました。
 
-本アプリの特徴は、通常の小説とweb小説について感想の共有やお気に入りの登録ができることです。　　
+本アプリの特徴は、通常の小説とweb小説について感想の共有やお気に入りの登録ができることです。
 これにより、商業作品やweb小説のどちらか一方であったユーザーが新しい作品に出会える機会を提供します。
 また、お気に入り機能により好きな商業作品とweb小説の管理が可能であり、それぞれ作品のページへのリンクが存在するため、容易に確認することができます。
 
@@ -50,6 +50,7 @@
 * お気に入りした小説の確認機能
 
 # ER diagram
+[erd.pdf](https://github.com/Sora0702/my_favorite_light_nevel/files/12838991/erd.pdf)
 
 # Usage
 
