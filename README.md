@@ -4,21 +4,24 @@
 
 * 読書家さんたちと感想の共有や新しい小説との出会い、自分のお気に入り小説の管理を目的としています。
 
-* アプリケーションの確認は[こちら](https://okinove-de71f085f06e.herokuapp.com/)
-
 ***
 
-1. [DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
-2. [Features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#features)
-3. [Technology used](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#technology-used)
-4. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
+1. [URL](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#url)
+2. [DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
+3. [Features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#features)
+4. [Technology used](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#technology-used)
+5. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
 6. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
+
+# URL
+(https://okinove-de71f085f06e.herokuapp.com/)
 
 # DEMO
 
 ![okinove](https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/62de158d-cd52-443b-bd90-fdb253a07e53)
 
 # Features
+
 
 # Technology used
 
