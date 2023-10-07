@@ -8,7 +8,7 @@
 1. [URL](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#url)
 2. [DEMO](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#demo)
 3. [Features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#features)
-4. [Technology used](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#technology-used)
+4. [Technology](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#technology)
 5. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
 6. [ER diagram](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#er-diagram)
 7. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
@@ -30,7 +30,7 @@ https://okinove-de71f085f06e.herokuapp.com/
 これにより、商業作品やweb小説のどちらか一方であったユーザーが新しい作品に出会える機会を提供します。
 また、お気に入り機能により好きな商業作品とweb小説の管理が可能であり、それぞれ作品のページへのリンクが存在するため、容易に確認することができます。
 
-# Technology used
+# Technology
 
 * Ruby 3.2.1
 * Ruby on Rails 6.1.7.3
@@ -50,7 +50,7 @@ https://okinove-de71f085f06e.herokuapp.com/
 * お気に入りした小説の確認機能
 
 # ER diagram
-[erd.pdf](https://github.com/Sora0702/my_favorite_light_nevel/files/12838991/erd.pdf)
+![erd.pdf](https://github.com/Sora0702/my_favorite_light_nevel/files/12838991/erd.pdf)
 
 # Usage
 
