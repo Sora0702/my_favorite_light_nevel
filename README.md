@@ -50,7 +50,7 @@ https://okinove-de71f085f06e.herokuapp.com/
 * お気に入りした小説の確認機能
 
 # ER diagram
-![erd.pdf](https://github.com/Sora0702/my_favorite_light_nevel/files/12838991/erd.pdf)
+<img width="1348" alt="ER diagram" src="https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/d302660a-18c8-4586-a105-df5c0ed9a6f2">
 
 # Usage
 
