@@ -11,8 +11,8 @@
 4. [Technology](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#technology)
 5. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
 6. [ER diagram](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#er-diagram)
-７. [Future features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#future-features)
-８. [License](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#license)
+7. [Future features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#future-features)
+8. [License](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#license)
 
 # URL
 https://okinove-de71f085f06e.herokuapp.com/
