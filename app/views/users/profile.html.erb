@@ -22,7 +22,7 @@
 <div>
   <% if @books.present? %>
     <div class="like-area">
-      <%= render "shared/books_index", books: @books %>
+      <%= render "users/profile_like_index", books: @books %>
     </div>
   <% elsif @narous.present? %>
     <div class="like-area">
