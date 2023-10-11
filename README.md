@@ -11,9 +11,8 @@
 4. [Technology](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#technology)
 5. [Functions](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#functions)
 6. [ER diagram](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#er-diagram)
-7. [Usage](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#usage)
-8. [Future features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#future-features)
-9. [License](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#license)
+７. [Future features](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#future-features)
+８. [License](https://github.com/Sora0702/my_favorite_light_nevel/blob/main/README.md#license)
 
 # URL
 https://okinove-de71f085f06e.herokuapp.com/
@@ -52,48 +51,6 @@ https://okinove-de71f085f06e.herokuapp.com/
 
 # ER diagram
 <img width="1348" alt="ER diagram" src="https://github.com/Sora0702/my_favorite_light_nevel/assets/124307131/d302660a-18c8-4586-a105-df5c0ed9a6f2">
-
-# Usage
-
-本アプリの使用にあたり、yarnおよびwebpackerのインストールが必要となります。
-ローカル環境での利用方法は以下となります。
-
-1. リポジトリをクローン
-```
-$ git clone https://github.com/Sora0702/my_favorite_light_nevel.git
-```
-2. bundleのインストール
-```
-$ bundle install
-```
-3. データベースの設定
-```
-$ rails db:migrate
-```
-4. seedファイルの設定
-```
-$ rails db:seed
-```
-5. yarnのインストール
-```
-$ yarn install
-```
-6. webpackerインストール
-```
-$ yarn add @rails/webpacker
-```
-7. 環境変数を設定
-```
-$ export NODE_OPTIONS=--openssl-legacy-provider
-```
-8. webpackerのコンパイル
-```
-$ bundle exec rails webpacker:compile
-```
-9. サーバーの起動
-```
-$ rails s
-```
 
 # Future features
 今後、下記の機能の追加を目指しています。
