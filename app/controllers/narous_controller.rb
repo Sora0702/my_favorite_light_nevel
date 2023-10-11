@@ -1,4 +1,6 @@
 class NarousController < ApplicationController
+  before_action :authenticate_user!, except: :show
+
   require 'httpclient'
   require 'uri'
 

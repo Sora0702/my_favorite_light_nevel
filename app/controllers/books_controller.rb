@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: :show
+
   def search
     if params[:keyword].present?
       @books = RakutenWebService::Books::Book.search(title: params[:keyword])
