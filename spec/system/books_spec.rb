@@ -14,7 +14,7 @@ RSpec.describe "books", type: :system do
     end
 
     it 'ページのタイトルが正しく表示されていること' do
-      expect(page).to have_title "登録済み小説一覧 - Okinove"
+      expect(page).to have_title "書籍一覧 - Okinove"
     end
 
     context '検索した場合' do
@@ -67,9 +67,9 @@ RSpec.describe "books", type: :system do
       end
     end
 
-    it '小説の購入はこちらをクリックした際に該当の商品ページへ遷移すること' do
+    it '書籍の購入はこちらをクリックした際に該当の商品ページへ遷移すること' do
       within(".book-box") do
-        click_on "小説の購入はこちら"
+        click_on "書籍の購入はこちら"
         expect(page).to have_current_path book.url
       end
     end
@@ -193,7 +193,7 @@ RSpec.describe "books", type: :system do
     end
 
     it 'ページのタイトルが正しく表示されていること' do
-      expect(page).to have_title "小説を検索する - Okinove"
+      expect(page).to have_title "書籍を検索する - Okinove"
     end
 
     context '検索した場合' do

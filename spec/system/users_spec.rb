@@ -55,8 +55,10 @@ RSpec.describe "users", type: :system do
       end
 
       it 'お気に入り解除ができること' do
-        find("#like-btn").click
-        sleep 0.5
+        accept_alert do
+          find("#like-btn").click
+        end
+        expect(page).to have_current_path profile_path
         expect(user.likes.count).to eq(0)
       end
     end
@@ -89,8 +91,10 @@ RSpec.describe "users", type: :system do
       end
 
       it 'お気に入り解除ができること' do
-        find("#like-btn").click
-        sleep 0.5
+        accept_alert do
+          find("#like-btn").click
+        end
+        expect(page).to have_current_path profile_path
         expect(user.narou_likes.count).to eq(0)
       end
     end
