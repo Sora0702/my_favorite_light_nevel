@@ -1,34 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid header-box">
     <%= link_to "Okinove", :home_top, class: "navbar-brand" %>
-    <% if user_signed_in? %>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <%= link_to "Home", :root, class: "nav-link header-hover" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "web小説一覧", :narous, class: "nav-link header-hover" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "一般小説一覧", :books, class: "nav-link text-nowrap header-hover" %>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Home", :root, class: "nav-link header-hover" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "書籍一覧", :books, class: "nav-link text-nowrap header-hover" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "web小説一覧", :narous, class: "nav-link header-hover" %>
+        </li>
+      </ul>
+      <% if user_signed_in? %>
         <span class="navbar-text">
           <%= render "shared/header_dropdown_user" %>
         </span>
-      </div>
-    <% else %>
-      <ul class="navbar-nav flex-row">
-        <li class="nav-item Nav-item header-hover"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></li>
-        <li class="nav-item Nav-item header-hover"><%= link_to "ログイン", :new_user_session %></li>
-        <li class="nav-item header-hover"><%= link_to "新規登録", :new_user_registration %></li>
-      </ul>
-    <% end %>
+      <% else %>
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item Nav-item header-hover"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></li>
+          <li class="nav-item Nav-item header-hover"><%= link_to "ログイン", :new_user_session %></li>
+          <li class="nav-item header-hover"><%= link_to "新規登録", :new_user_registration %></li>
+        </ul>
+      <% end %>
+    </div>
   </div>
 </nav>

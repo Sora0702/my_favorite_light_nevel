@@ -9,5 +9,9 @@ class LikesController < ApplicationController
   def destroy
     @book = current_user.like_books.find(params[:id])
     current_user.unlike(@book)
+    respond_to do |format|
+      format.html { redirect_to profile_path }
+      format.js { render 'likes/destroy.js.erb' }
+    end
   end
 end

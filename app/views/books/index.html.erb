@@ -1,10 +1,10 @@
-<% provide :title, "登録済み小説一覧" %>
+<% provide :title, "登録済み書籍一覧" %>
 <div class="container">
-  <h3 class="mt-4">登録済み小説一覧</h1>
+  <h3 class="mt-4">登録済み書籍一覧</h1>
   <div class="search-box mt-4">
     <%= form_with url: books_path, method: :get, local: true do |f|%>
       <div class="input-group">
-        <%= f.text_field :keyword, placeholder: "小説のタイトルまたは著者を入力してください", class: "form-control", id: "keyword" %>
+        <%= f.text_field :keyword, placeholder: "書籍のタイトルまたは著者を入力してください", class: "form-control", id: "keyword" %>
         <span class="input-group-btn">
           <%= f.submit '検索', name: nil, class: "form-control" %>
         </span>

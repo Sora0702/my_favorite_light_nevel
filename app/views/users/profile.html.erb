@@ -13,7 +13,7 @@
 </div>
 <ul class="py-5 nav nav-pills nav-fill">
   <li class="nav-item">
-    <%= link_to "一般小説のお気に入り", user_like_path, remote: true, class: "review-tab" %>
+    <%= link_to "書籍のお気に入り", user_like_path, remote: true, class: "review-tab" %>
   </li>
   <li class="nav-item">
     <%= link_to "web小説のお気に入り", user_narou_like_path, remote: true, class: "review-tab"  %>
@@ -22,11 +22,11 @@
 <div>
   <% if @books.present? %>
     <div class="like-area">
-      <%= render "shared/books_index", books: @books %>
+      <%= render "users/profile_like_index", books: @books %>
     </div>
   <% elsif @narous.present? %>
     <div class="like-area">
-      <%= render "shared/narous_index", narous: @narous %>
+      <%= render "users/profile_narou_like_index", narous: @narous %>
     </div>
   <% end %>
 </div>
