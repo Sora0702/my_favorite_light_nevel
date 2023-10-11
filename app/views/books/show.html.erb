@@ -9,10 +9,10 @@
   <div class="row mt-4">
     <div class="col-3">
       <div class="card mb-4 shadow-sm mt-3 book-box">
-        <%= image_tag @book.image_url, class: "card-img-top", alt: "小説イメージ" %>
+        <%= image_tag @book.image_url, class: "card-img-top", alt: "書籍イメージ" %>
         <div class="card-body">
           <p class="card-text text-center"><%= @book.author %></p>
-          <p class="card-text text-center mt-4"><%= link_to "小説の購入はこちら", @book.url %></p>
+          <p class="card-text text-center mt-4"><%= link_to "書籍の購入はこちら", @book.url %></p>
           <p class="card-text link-attention text-center">※楽天Booksストアへ遷移します。</p>
         </div>
       </div>
